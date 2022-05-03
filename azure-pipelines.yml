@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: RHEL
+  vmImage: windows-2022
 
 steps:
 - task: oc-setup@2
