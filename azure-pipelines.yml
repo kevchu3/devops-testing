@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: registry.redhat.io/rhel8/dotnet-60:latest
+  vmImage: RHEL
 
 steps:
 - task: oc-setup@2
