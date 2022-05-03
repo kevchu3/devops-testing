@@ -17,7 +17,7 @@ steps:
   displayName: Set up oc cli
 
 - script: |
-    oc new-project ${env:NAMESPACE}
+    oc new-project my-project
   displayName: Create a new OpenShift project
 
 - script: |
