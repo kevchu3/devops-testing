@@ -14,3 +14,17 @@ steps:
   inputs:
     connectionType: 'OpenShift Connection Service'
     openshiftService: 'kechung ROSA cluster'
+  displayName: Set up oc cli
+
+- script: |
+    oc new-project ${env:NAMESPACE}
+  displayName: Create a new OpenShift project
+
+- script: |
+    oc new-app dotnet:6.0-ubi8~https://github.com/redhat-developer/s2i-dotnetcore-ex#dotnet-6.0 --context-dir app
+  displayName: Add the .NET Core application
+
+- script: |
+    oc expose service s2i-dotnetcore-ex
+    oc get route s2i-dotnetcore-ex
+  displayName: Make the .NET Core application accessible externally and show the url
