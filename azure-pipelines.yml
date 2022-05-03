@@ -21,10 +21,10 @@ steps:
   displayName: Create a new OpenShift project
 
 - script: |
-    oc new-app dotnet:6.0-ubi8~https://github.com/redhat-developer/s2i-dotnetcore-ex#dotnet-6.0 --context-dir app
+    oc new-app dotnet:6.0-ubi8~https://github.com/kevchu3/dotnet-60-example --context-dir App
   displayName: Add the .NET Core application
 
 - script: |
-    oc expose service s2i-dotnetcore-ex
-    oc get route s2i-dotnetcore-ex
+    oc expose service dotnet-60-example
+    oc get route dotnet-60-example
   displayName: Make the .NET Core application accessible externally and show the url
