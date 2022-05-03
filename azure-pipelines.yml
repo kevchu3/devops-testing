@@ -24,7 +24,7 @@ steps:
     oc new-app dotnet:6.0-ubi8~https://github.com/kevchu3/dotnet-60-example --context-dir App
   displayName: Add the .NET Core application
 
-- script: |
-    oc expose service dotnet-60-example
-    oc get route dotnet-60-example
-  displayName: Make the .NET Core application accessible externally and show the url
+#- script: |
+#    oc expose service dotnet-60-example
+#    oc get route dotnet-60-example
+#  displayName: Make the .NET Core application accessible externally and show the url
